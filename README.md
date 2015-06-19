@@ -1,5 +1,7 @@
-Graticule
+Graticule - Rails 2 version with Yahoo BOSS support
 =========
+
+[![Build Status](https://semaphoreci.com/api/v1/projects/7e511e22-7ae2-4fb4-8770-43f3aa10b3ac/461261/badge.svg)](https://semaphoreci.com/conciergelive/graticule)
 
 ```
   grat·i·cule |ˈgratəˌkyoōl|
