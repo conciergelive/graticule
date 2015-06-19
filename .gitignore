@@ -1,5 +1,5 @@
 Gemfile.lock
-test/config.yml
+#test/config.yml
 *.gem
 pkg
 coverage

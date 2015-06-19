@@ -3,7 +3,7 @@ $:.unshift(File.dirname(__FILE__) + '/../lib')
 
 require 'rubygems'
 require 'bundler/setup'
-require 'test/unit'
+require 'test/unit/full'
 require 'graticule'
 require 'mocha/setup'
 require 'mocks/uri'
