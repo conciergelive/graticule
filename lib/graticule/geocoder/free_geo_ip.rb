@@ -18,7 +18,11 @@ module Graticule #:nodoc:
     private
 
       def prepare_response(response)
-        JSON.parse(response)
+        begin
+          JSON.parse(response)
+        rescue JSON::ParserError
+          return {}
+        end
       end
 
       def parse_response(response) #:nodoc:
@@ -26,7 +30,7 @@ module Graticule #:nodoc:
         Location.new.tap do |location|
           location.latitude = response['latitude']
           location.longitude = response['longitude']
-          location.locality, location.region = response['city'].split(', ')
+          location.locality = response['city']
           location.country = response['country_name']
           location.region = response['region_name']
           location.postal_code = response['zip_code']
@@ -34,8 +38,6 @@ module Graticule #:nodoc:
       end
 
       def check_error(response) #:nodoc:
-        raise AddressError, 'Unknown' if response['City'] =~ /Unknown City/
-        raise AddressError, 'Private Address' if response['City'] =~ /Private Address/
       end
 
     end
